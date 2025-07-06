@@ -60,18 +60,19 @@ export default function MainFeed() {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-12 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-white px-4 py-12 flex flex-col items-center justify-center animate-fade-in">
       <NavigationBar viewType={"login"} />
       <CreateMessage
         messages={messages}
         setMessages={setMessages}
         handleInteraction={showNotification}
       />
-      {messages?.map((message) => (
+      {messages?.map((message, index) => (
         <MessageItem
           key={message.id}
           message={message}
           handleInteraction={showNotification}
+          animationDelay={index * 0.1}
         />
       ))}
       <AuthModal />

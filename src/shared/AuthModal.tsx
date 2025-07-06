@@ -17,22 +17,24 @@ export default function AuthModal() {
 
   return (
     <div
-      className="fixed inset-0 bg-[rgba(140,140,140,0.5)] flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-[rgba(140,140,140,0.5)] flex items-center justify-center z-50 p-4 modal-backdrop backdrop-blur-sm"
       onClick={handleBackgroundClick}
     >
-      {isLogin ? (
-        <AccessPage
-          onSuccess={() => setShowAuthModal(false)}
-          onSwitchMode={() => setIsLogin(false)}
-          modal={true}
-        />
-      ) : (
-        <RegistrationPage
-          onSuccess={() => setShowAuthModal(false)}
-          onSwitchMode={() => setIsLogin(true)}
-          modal={true}
-        />
-      )}
+      <div className="modal-content animate-bounce-in">
+        {isLogin ? (
+          <AccessPage
+            onSuccess={() => setShowAuthModal(false)}
+            onSwitchMode={() => setIsLogin(false)}
+            modal={true}
+          />
+        ) : (
+          <RegistrationPage
+            onSuccess={() => setShowAuthModal(false)}
+            onSwitchMode={() => setIsLogin(true)}
+            modal={true}
+          />
+        )}
+      </div>
     </div>
   );
 }

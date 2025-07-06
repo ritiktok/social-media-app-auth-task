@@ -57,29 +57,29 @@ export default function CreateMessage({
   };
 
   return (
-    <div className="rounded-2xl p-1 mb-8 bg-gray-50 shadow-sm w-full max-w-md">
-      <div className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm w-full max-w-md">
+    <div className="rounded-2xl p-1 mb-8 bg-gray-50 shadow-sm w-full max-w-md animate-scale-in">
+      <div className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm w-full max-w-md hover:shadow-md transition-all duration-300">
         <div className="mb-2 grid grid-cols-12 items-center gap-2">
           <div className="col-span-12 sm:col-span-10 flex flex-wrap items-center bg-gray-100 rounded-lg p-1">
-            <select className="bg-white rounded-lg shadow-sm px-2 py-1 text-sm text-gray-700 mr-2 mb-1">
+            <select className="bg-white rounded-lg shadow-sm px-2 py-1 text-sm text-gray-700 mr-2 mb-1 hover:shadow-md transition-shadow duration-200">
               <option>Paragraph</option>
             </select>
 
             <div className="flex items-center gap-1 mb-1">
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 bg-white hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 bg-white hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaBold />
               </button>
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaItalic />
               </button>
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaUnderline />
@@ -90,13 +90,13 @@ export default function CreateMessage({
 
             <div className="flex items-center gap-1 mb-1">
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaListUl />
               </button>
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaListOl />
@@ -107,13 +107,13 @@ export default function CreateMessage({
 
             <div className="flex items-center gap-1 mb-1">
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 99
               </button>
               <button
-                className="cursor-pointer p-1 hover:scale-105 transition-transform duration-150 hover:bg-gray-200 rounded"
+                className="cursor-pointer p-1 hover:scale-105 transition-all duration-150 hover:bg-gray-200 rounded hover:shadow-sm"
                 onClick={handleAuthInteraction}
               >
                 <FaCode />
@@ -124,7 +124,7 @@ export default function CreateMessage({
           <div className="col-span-12 sm:col-span-2 flex justify-end">
             <button
               onClick={handleAuthInteraction}
-              className="text-red-500 bg-red-100 rounded-lg p-3 cursor-pointer hover:scale-105 transition-transform duration-150"
+              className="text-red-500 bg-red-100 rounded-lg p-3 cursor-pointer hover:scale-105 hover:bg-red-200 transition-all duration-150 hover:shadow-md"
             >
               <FaTrashAlt />
             </button>
@@ -133,7 +133,7 @@ export default function CreateMessage({
 
         <div className="flex items-start mb-2">
           <div
-            className="mr-2 text-lg text-gray-500 cursor-pointer hover:scale-110 transition-transform duration-100"
+            className="mr-2 text-lg text-gray-500 cursor-pointer hover:scale-110 hover:text-yellow-500 transition-all duration-200"
             onClick={handleAuthInteraction}
           >
             <FaSmile />
@@ -146,7 +146,7 @@ export default function CreateMessage({
               }
             }}
             onChange={(e) => setMessageText(e.target.value)}
-            className="w-full outline-none text-sm placeholder-gray-400"
+            className="w-full outline-none text-sm placeholder-gray-400 focus:placeholder-gray-300 transition-colors duration-200"
             placeholder="How are you feeling today?"
             rows={4}
             style={{ resize: "none" }}
@@ -157,22 +157,22 @@ export default function CreateMessage({
 
         <div className="flex items-center justify-between">
           <div
-            className="flex gap-3 text-gray-500 "
+            className="flex gap-3 text-gray-500"
             onClick={handleAuthInteraction}
           >
-            <button className="bg-gray-100 rounded-lg p-2 cursor-pointer hover:scale-110 transition-transform duration-100">
+            <button className="bg-gray-100 rounded-lg p-2 cursor-pointer hover:scale-110 hover:bg-gray-200 transition-all duration-200">
               <FaPlus />
             </button>
-            <button className="cursor-pointer hover:scale-110 transition-transform duration-100">
+            <button className="cursor-pointer hover:scale-110 hover:text-blue-500 transition-all duration-200">
               <FaMicrophone />
             </button>
-            <button className="cursor-pointer hover:scale-110 transition-transform duration-100">
+            <button className="cursor-pointer hover:scale-110 hover:text-purple-500 transition-all duration-200">
               <FaVideo />
             </button>
           </div>
           <button
             onClick={handleSubmit}
-            className="text-xl cursor-pointer text-indigo-600 hover:scale-110 transition-transform duration-100"
+            className="text-xl cursor-pointer text-indigo-600 hover:scale-110 hover:text-indigo-700 transition-all duration-200 hover:rotate-12"
           >
             <FaPaperPlane />
           </button>
